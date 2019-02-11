@@ -1,6 +1,6 @@
 # Write your MySQL query statement below
 
-SELECT E1.Name As 'Employee'
-FROM Employee E1, Employee E2
-WHERE E1.ManagerID = E2.Id AND E1.Salary > E2.Salary
+SELECT A.Name As 'Employee'
+FROM Employee A, Employee B
+WHERE A.ManagerID = B.Id AND A.Salary > B.Salary
 
