@@ -1,0 +1,15 @@
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        globalMax = localMax = localMin = nums[0]
+        
+        for i in nums[1:]:
+    
+    #Max subarray product ending at position i will be either the number itself, the number * max product observed to that point (if i is positive), or the number * min product observed to that point. Have to consider all of these because of negative numbers and 0s...
+            
+            localMax,localMin=max(i,i*localMax,i*localMin),min(i,i*localMax,i*localMin)
+            
+            #Compare to global
+            globalMax=max(globalMax,localMax)
+            
+        return globalMax
+            
